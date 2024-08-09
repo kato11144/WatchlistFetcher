@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: tmdb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ${PWD}/workspace:/workspace
+    tty: true
+    stdin_open: true
