@@ -9,7 +9,7 @@ cp .env.example .env
 ```
 **Edit the .env file**
 ```sh
-nano .env
+vim .env
 ```
 
 ## Build and Start Container
