@@ -1,17 +1,16 @@
-FROM python:3.10-slim
+FROM python:3.12.7
 
 WORKDIR /workspace
 
-COPY workspace/requirements.txt .
+COPY requirements.txt .
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    nano \
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
     vim \
-    tzdata && \
-    rm -rf /var/lib/apt/lists/* && \
-    pip install --no-cache-dir -r requirements.txt
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-ENV TZ=Asia/Tokyo
-RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
-    echo "Asia/Tokyo" > /etc/timezone
+ENV LANG=C.UTF-8
+
+CMD ["/bin/bash"]
