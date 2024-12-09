@@ -26,33 +26,33 @@ class DumpManager:
         return {
             'movies': [
                 {
-                    'id': 123,  # int
-                    'title': 'string',  # str
-                    'original_title': 'string',  # str
-                    'release_date': 'YYYY-MM-DD',  # str (ISO 8601 format)
-                    'poster_path': '/path/to/poster.jpg',  # str
-                    'vote_average': 0.0,  # float
-                    'local_poster_path': 'path/to/local_poster.jpg'  # str
+                    'id': 123,
+                    'title': 'string',
+                    'original_title': 'string',
+                    'release_date': 'YYYY-MM-DD',
+                    'poster_path': '/path/to/poster.jpg',
+                    'vote_average': 0.0,
+                    'local_poster_path': 'path/to/local_poster.jpg'
                 },
                 {
-                    'id': 456,  # int
-                    'title': 'string',  # str
-                    'original_title': 'string',  # str
-                    'release_date': 'YYYY-MM-DD',  # str (ISO 8601 format)
-                    'poster_path': '/path/to/poster.jpg',  # str
-                    'vote_average': 0.0,  # float
-                    'local_poster_path': 'path/to/local_poster.jpg'  # str
+                    'id': 456,
+                    'title': 'string',
+                    'original_title': 'string',
+                    'release_date': 'YYYY-MM-DD',
+                    'poster_path': '/path/to/poster.jpg',
+                    'vote_average': 0.0,
+                    'local_poster_path': 'path/to/local_poster.jpg'
                 }
             ],
             'tv_shows': [
                 {
-                    'id': 789,  # int
-                    'name': 'string',  # str
-                    'original_name': 'string',  # str
-                    'first_air_date': 'YYYY-MM-DD',  # str (ISO 8601 format)
-                    'poster_path': '/path/to/poster.jpg',  # str
-                    'vote_average': 0.0,  # float
-                    'local_poster_path': 'path/to/local_poster.jpg'  # str
+                    'id': 789,
+                    'name': 'string',
+                    'original_name': 'string',
+                    'first_air_date': 'YYYY-MM-DD',
+                    'poster_path': '/path/to/poster.jpg',
+                    'vote_average': 0.0,
+                    'local_poster_path': 'path/to/local_poster.jpg'
                 }
             ]
         }
