@@ -2,6 +2,6 @@
 __pycache__/
 .env
 
-workspace/data/*.json
-workspace/logs/*.log
-workspace/images/
+*.json
+*.jpg
+*.log
