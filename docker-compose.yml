@@ -1,12 +1,12 @@
 services:
   app:
-    container_name: tmdb
+    container_name: TMDB
     build:
       context: .
       dockerfile: Dockerfile
     env_file:
       - .env
     volumes:
-      - ${PWD}/workspace:/workspace
+      - ${PWD}/app:/app
     tty: true
     stdin_open: true
