@@ -9,8 +9,8 @@ class DumpManager:
 
     def save_watchlists(self, movie_watchlist, tv_watchlist):
         data = {
-            'movies': movie_watchlist,
-            'tv_shows': tv_watchlist
+            'movie': movie_watchlist,
+            'tv': tv_watchlist
         }
 
         with open(self.file_path, 'w', encoding='utf-8') as file:
@@ -24,7 +24,7 @@ class DumpManager:
         The example format uses generic types instead of specific values.
         """
         return {
-            'movies': [
+            'movie': [
                 {
                     'id': 123,
                     'title': 'string',
@@ -44,7 +44,7 @@ class DumpManager:
                     'local_poster_path': 'path/to/local_poster.jpg'
                 }
             ],
-            'tv_shows': [
+            'tv': [
                 {
                     'id': 789,
                     'name': 'string',
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     print("Example format for dumped data:")
     print(json.dumps(example_format, indent=4, ensure_ascii=False))
 
-    movie_watchlist = example_format['movies']
-    tv_watchlist = example_format['tv_shows']
+    movie_watchlist = example_format['movie']
+    tv_watchlist = example_format['tv']
 
     dump_manager.save_watchlists(movie_watchlist, tv_watchlist)

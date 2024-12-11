@@ -28,7 +28,7 @@ class TMDbClient:
         response = requests.get(url)
         response.raise_for_status()
         watchlist = self.format_movie_watchlist(response.json())
-        self.download_posters(watchlist, "movies")
+        self.download_posters(watchlist, "movie")
         return watchlist
 
     def format_movie_watchlist(self, data):
@@ -78,9 +78,9 @@ class TMDbClient:
                 item['local_poster_path'] = file_path
 
     def generate_filename(self, item, category):
-        if category == "movies":
+        if category == "movie":
             title = item.get('title')
-        else:  # tv
+        if category == "tv":
             title = item.get('name')
         safe_title = title.replace(" ", "_").replace("/", "_")
         return f"{item['id']}_{safe_title}.jpg"
