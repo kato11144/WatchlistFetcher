@@ -1,10 +1,12 @@
 import os
 import requests
 from config import TMDB_API_KEY
+from config import TMDB_ACCOUNT_ID
 
 class TMDbClient:
     def __init__(self):
         self.api_key = TMDB_API_KEY
+        self.account_id = TMDB_ACCOUNT_ID
         self.base_url = 'https://api.themoviedb.org/3'
         self.session_id = None
 
@@ -21,10 +23,10 @@ class TMDbClient:
         response.raise_for_status()
         self.session_id = response.json()['session_id']
 
-    def get_movie_watchlist(self, account_id):
+    def get_movie_watchlist(self):
         if not self.session_id:
             raise ValueError("Session ID is not set. Please authenticate first.")
-        url = f'{self.base_url}/account/{account_id}/watchlist/movies?api_key={self.api_key}&session_id={self.session_id}'
+        url = f'{self.base_url}/account/{self.account_id}/watchlist/movies?api_key={self.api_key}&session_id={self.session_id}'
         response = requests.get(url)
         response.raise_for_status()
         watchlist = self.format_movie_watchlist(response.json())
@@ -44,10 +46,10 @@ class TMDbClient:
             })
         return watchlist
 
-    def get_tv_watchlist(self, account_id):
+    def get_tv_watchlist(self):
         if not self.session_id:
             raise ValueError("Session ID is not set. Please authenticate first.")
-        url = f'{self.base_url}/account/{account_id}/watchlist/tv?api_key={self.api_key}&session_id={self.session_id}'
+        url = f'{self.base_url}/account/{self.account_id}/watchlist/tv?api_key={self.api_key}&session_id={self.session_id}'
         response = requests.get(url)
         response.raise_for_status()
         watchlist = self.format_tv_watchlist(response.json())
