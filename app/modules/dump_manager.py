@@ -2,10 +2,11 @@ import json
 import os
 
 class DumpManager:
-    def __init__(self, file_name):
+    def __init__(self):
         self.dir_name = 'data'
+        self.file_name = 'watchlists.json'
+        self.file_path = os.path.join(self.dir_name, self.file_name)
         os.makedirs(self.dir_name, exist_ok=True)
-        self.file_path = os.path.join(self.dir_name, file_name)
 
     def save_watchlists(self, movie_watchlist, tv_watchlist):
         data = {
@@ -17,8 +18,7 @@ class DumpManager:
             json.dump(data, file, indent=4, ensure_ascii=False)
         print(f'Watchlists saved to {self.file_path}')
 
-    @staticmethod
-    def get_example_format():
+    def get_example_format(self):
         """
         Returns an example of the data format used for dumping watchlists.
         The example format uses generic types instead of specific values.
@@ -58,7 +58,7 @@ class DumpManager:
         }
 
 if __name__ == "__main__":
-    dump_manager = DumpManager('watchlists.json')
+    dump_manager = DumpManager()
 
     example_format = dump_manager.get_example_format()
     print("Example format for dumped data:")
