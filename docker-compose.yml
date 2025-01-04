@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: TMDB
+    container_name: watchlist-fetcher
     build:
       context: .
       dockerfile: Dockerfile
