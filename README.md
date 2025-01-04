@@ -1,6 +1,6 @@
 # WatchlistFetcher
 
-Fetch the Watchlist using the [TMDB](https://www.themoviedb.org/) API with Docker.
+Fetch the Watchlist using the [TMDB](https://www.themoviedb.org/) API
 
 ## Setup Environment Variables
 
